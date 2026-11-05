@@ -26,9 +26,9 @@ sudo nmap -sS -sV -sC -p- --min-rate=1000 10.144.148.109
 
 Скриншоты первичного сканирования/осмотра:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012145823.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/1]]
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012145849.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/2]]
 
 ---
 
@@ -84,11 +84,11 @@ d1ad7c0a3805955a35eb260dab4180dd
 
 подключение:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012150216.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/3]]
 
 Barney:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012151916.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/4]]
 
 ---
 
@@ -108,11 +108,11 @@ Password hint: YabbaDabbaD0000! (user = 'FredFlintstone')
 
 Скриншот генерации сертификата:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012151945.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/5]]
 
 Fred:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152145.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/6]]
 
 ---
 
@@ -120,9 +120,9 @@ Fred:
 
 Далее была получена строка, которую нужно прогнать через несколько кодировок. В исходнике она была разбита переносом строки, но фактически это одна base64 строка:
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152802.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/7]]
 
-![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152819.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/8]]
 ```text
 TEZLRUM1MlpLUkNYU1dLWElaVlU0M0tKR05NWFVSSlNMRldWUzUyT1BKQVhVVExOSkpWVTJSQ1dO
 ```
