@@ -26,9 +26,9 @@ sudo nmap -sS -sV -sC -p- --min-rate=1000 10.144.148.109
 
 Скриншоты первичного сканирования/осмотра:
 
-![[Pasted image 20261012145823.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012145823.png]]
 
-![[Pasted image 20261012145849.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012145849.png]]
 
 ---
 
@@ -84,11 +84,11 @@ d1ad7c0a3805955a35eb260dab4180dd
 
 подключение:
 
-![[Pasted image 20261012150216.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012150216.png]]
 
 Barney:
 
-![[Pasted image 20261012151916.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012151916.png]]
 
 ---
 
@@ -108,11 +108,11 @@ Password hint: YabbaDabbaD0000! (user = 'FredFlintstone')
 
 Скриншот генерации сертификата:
 
-![[Pasted image 20261012151945.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012151945.png]]
 
 Fred:
 
-![[Pasted image 20261012152145.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152145.png]]
 
 ---
 
@@ -120,9 +120,9 @@ Fred:
 
 Далее была получена строка, которую нужно прогнать через несколько кодировок. В исходнике она была разбита переносом строки, но фактически это одна base64 строка:
 
-![[Pasted image 20261012152802.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152802.png]]
 
-![[Pasted image 20261012152819.png]]
+![[https://github.com/Roamal/ctf-writeups/blob/main/THM/Easy/b3dr0ck/images/Pasted image 20261012152819.png]]
 ```text
 TEZLRUM1MlpLUkNYU1dLWElaVlU0M0tKR05NWFVSSlNMRldWUzUyT1BKQVhVVExOSkpWVTJSQ1dO
 ```
