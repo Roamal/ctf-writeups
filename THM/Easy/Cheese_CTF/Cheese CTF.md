@@ -70,7 +70,7 @@ http://TARGET/secret-script.php?0=id&file=<сгенерированная_цеп
 
 Получаем RCE:
 
-![RCE id](img/Pasted_image 20261014172944.png)
+![RCE id](img/Pasted_image_20261014172944.png)
 
 ## 4. Reverse shell
 
