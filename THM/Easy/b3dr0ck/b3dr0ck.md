@@ -28,7 +28,7 @@ sudo nmap -sS -sV -sC -p- --min-rate=1000 10.144.148.109
 
 ![nmap](images/1.png)
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/2.png)
+![](images/2.png)
 
 ---
 
@@ -84,11 +84,11 @@ d1ad7c0a3805955a35eb260dab4180dd
 
 подключение:
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/3.png)
+![](images/3.png)
 
 Barney:
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/4.png)
+![](images/4.png)
 
 ---
 
@@ -112,7 +112,7 @@ Password hint: YabbaDabbaD0000! (user = 'FredFlintstone')
 
 Fred:
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/6.png)
+![](images/6.png)
 
 ---
 
@@ -120,9 +120,9 @@ Fred:
 
 Далее была получена строка, которую нужно прогнать через несколько кодировок. В исходнике она была разбита переносом строки, но фактически это одна base64 строка:
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/7.png)
+![](images/7.png)
 
-![](https://github.com/Roamal/ctf-writeups/tree/main/THM/Easy/b3dr0ck/images/8.png)
+![](images/8.png)
 ```text
 TEZLRUM1MlpLUkNYU1dLWElaVlU0M0tKR05NWFVSSlNMRldWUzUyT1BKQVhVVExOSkpWVTJSQ1dO
 ```
