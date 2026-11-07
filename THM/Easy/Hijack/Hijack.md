@@ -94,7 +94,7 @@ this will prevent any future brute forcing.
 
 ![Cookie](img/Pasted_image_20261020192933.png)
 
-По сути это `base64(md5(username:password))`. Пишем скрипт, чтобы превратить список паролей в набор cookie:
+По сути это `base64(username:md5(password)`. Пишем скрипт, чтобы превратить список паролей в набор cookie:
 
 ```python
 import hashlib
