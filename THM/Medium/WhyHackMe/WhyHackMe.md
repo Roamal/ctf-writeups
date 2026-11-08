@@ -1,4 +1,4 @@
-# Write-up: FTP → XSS → PCAP → Backdoor → Root
+# Write-up: WhyHackMe
 
 ## Recon
 
