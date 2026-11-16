@@ -100,9 +100,7 @@ Commenter avatars come from Gravatar.
 
 ![Админка](img/Pasted_image_20261116125534.png)
 
-Email админа:
 
-![Email админа](img/Pasted_image_20261116125942.png)
 
 ## RCE через Theme File Editor
 
